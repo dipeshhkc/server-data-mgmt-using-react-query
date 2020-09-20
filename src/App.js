@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query'
+import { ReactQueryDevtools } from 'react-query-devtools'
 
 function App() {
   const { isLoading, error, data } = useQuery('repoData', () =>
@@ -15,7 +16,7 @@ function App() {
     <div>
       <h1>{data.title}</h1>
       <p>{data.body}</p>
-      
+      <ReactQueryDevtools initialIsOpen />
     </div>
   );
 }
